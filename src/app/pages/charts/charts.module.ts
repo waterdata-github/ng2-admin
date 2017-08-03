@@ -2,6 +2,7 @@ import { NgModule }      from '@angular/core';
 import { CommonModule }  from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { NgaModule } from '../../theme/nga.module';
+import { HttpModule } from '@angular/http';
 
 import { routing }       from './charts.routing';
 import { Charts } from './charts.component';
@@ -15,6 +16,7 @@ import { AppTranslationModule } from '../../app.translation.module';
     AppTranslationModule,
     FormsModule,
     NgaModule,
+    HttpModule,
     routing
   ],
   declarations: [

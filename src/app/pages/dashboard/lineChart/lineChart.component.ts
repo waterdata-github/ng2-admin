@@ -15,8 +15,8 @@ export class LineChart {
     this.chartData = this._lineChartService.getData();
   }
 
-  initChart(chart:any) {
-    let zoomChart = () => {
+  initChart(chart: any) {
+    const zoomChart = () => {
       chart.zoomToDates(new Date(2013, 3), new Date(2014, 0));
     };
 

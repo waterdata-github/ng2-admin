@@ -54,16 +54,16 @@
     "created_with": "Created with"
   },
   "dashboard": {
-    "acquisition_channels": "Acquisition Channels",
+    "acquisition_channels": "Objectives",
     "users_by_country": "Users by Country",
     "revenue": "Revenue",
     "feed": "Feed",
     "todo_list": "To Do List",
     "calendar": "Calendar",
-    "new_visits": "New Visits",
-    "purchases": "Purchases",
-    "active_users": "Active Users",
-    "returned": "Returned",
+    "new_visits": "Avg max price",
+    "purchases": "Avg min price",
+    "active_users": "Avg initial price",
+    "returned": "Avg current price",
     "popular_app": {
       "super_app": "Super App",
       "most_popular_app": "Most Popular App",

@@ -22,6 +22,11 @@ import { PieChartService } from './pieChart/pieChart.service';
 import { TodoService } from './todo/todo.service';
 import { TrafficChartService } from './trafficChart/trafficChart.service';
 import { UsersMapService } from './usersMap/usersMap.service';
+import { HttpModule } from '@angular/http';
+import { BayChart } from './bayChart/bayChart.component';
+import { LineBayChartComponent } from './lineBayChart/lineBayChart.component';
+import { BayChartService } from './bayChart/bayChart.service';
+import { LineBayChartService } from './lineBayChart/lineBayChart.service';
 
 @NgModule({
   imports: [
@@ -29,6 +34,7 @@ import { UsersMapService } from './usersMap/usersMap.service';
     FormsModule,
     AppTranslationModule,
     NgaModule,
+    HttpModule,
     routing
   ],
   declarations: [
@@ -40,7 +46,9 @@ import { UsersMapService } from './usersMap/usersMap.service';
     Feed,
     Todo,
     Calendar,
-    Dashboard
+    Dashboard,
+    BayChart,
+    LineBayChartComponent
   ],
   providers: [
     CalendarService,
@@ -49,7 +57,9 @@ import { UsersMapService } from './usersMap/usersMap.service';
     PieChartService,
     TodoService,
     TrafficChartService,
-    UsersMapService
+    UsersMapService,
+    BayChartService,
+    LineBayChartService
   ]
 })
 export class DashboardModule {}

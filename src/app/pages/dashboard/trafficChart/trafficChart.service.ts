@@ -1,52 +1,41 @@
 import {Injectable} from '@angular/core';
 import {BaThemeConfigProvider, colorHelper} from '../../../theme';
+import { Http, Response }          from '@angular/http';
+import {Observable} from "rxjs/Observable";
+import 'rxjs/Rx';
 
 @Injectable()
 export class TrafficChartService {
 
-  constructor(private _baConfig:BaThemeConfigProvider) {
+  constructor(private _baConfig:BaThemeConfigProvider, private http: Http) {
   }
 
+  private commentsUrl = 'http://localhost:9000/fountain/v1/test-bay';
 
-  getData() {
+
+  /*getData(): Observable<Object[]> {
     let dashboardColors = this._baConfig.get().colors.dashboard;
-    return [
+    return Observable.of([
       {
-        value: 2000,
-        color: dashboardColors.white,
-        highlight: colorHelper.shade(dashboardColors.white, 15),
-        label: 'Other',
-        percentage: 87,
-        order: 1,
-      }, {
-        value: 1500,
-        color: dashboardColors.gossip,
-        highlight: colorHelper.shade(dashboardColors.gossip, 15),
-        label: 'Search engines',
-        percentage: 22,
-        order: 4,
-      }, {
-        value: 1000,
-        color: dashboardColors.silverTree,
-        highlight: colorHelper.shade(dashboardColors.silverTree, 15),
-        label: 'Referral Traffic',
-        percentage: 70,
-        order: 3,
-      }, {
-        value: 1200,
-        color: dashboardColors.surfieGreen,
-        highlight: colorHelper.shade(dashboardColors.surfieGreen, 15),
-        label: 'Direct Traffic',
-        percentage: 38,
-        order: 2,
-      }, {
-        value: 400,
-        color: dashboardColors.blueStone,
-        highlight: colorHelper.shade(dashboardColors.blueStone, 15),
-        label: 'Ad Campaigns',
-        percentage: 17,
-        order: 0,
-      },
-    ];
-  }
+        "value": 2000,
+        "color": "#ffffff",
+        "highlight": "#ffffff",
+        "label": "Other",
+        "percentage": 99,
+        "order": 1
+      }]);
+  }*/
+
+
+   getData(): Observable<Array<Object>> {
+    let dashboardColors = this._baConfig.get().colors.dashboard;
+
+    return this.http.get(this.commentsUrl)
+    // ...and calling .json() on the response to return data
+    .map((res:Response) => res.json())
+    //...errors if any
+    .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
+
+    }
+
 }

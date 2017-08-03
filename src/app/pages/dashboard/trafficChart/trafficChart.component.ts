@@ -15,7 +15,10 @@ export class TrafficChart {
   public doughnutData: Array<Object>;
 
   constructor(private trafficChartService:TrafficChartService) {
-    this.doughnutData = trafficChartService.getData();
+
+    trafficChartService.getData().forEach(value => {
+      this.doughnutData = value
+    });
   }
 
   ngAfterViewInit() {

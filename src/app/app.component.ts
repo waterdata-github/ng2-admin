@@ -14,7 +14,7 @@ import { layoutPaths } from './theme/theme.constants';
   selector: 'app',
   styleUrls: ['./app.component.scss'],
   template: `
-    <main [class.menu-collapsed]="isMenuCollapsed" baThemeRun>
+    <main [class.menu-collapsed]="false" baThemeRun>
       <div class="additional-bg"></div>
       <router-outlet></router-outlet>
     </main>

@@ -13,7 +13,7 @@ export class PieChartService {
       {
         color: pieColor,
         description: 'dashboard.new_visits',
-        stats: '57,820',
+        stats: '$ 57,820',
         icon: 'person',
       }, {
         color: pieColor,
@@ -23,12 +23,12 @@ export class PieChartService {
       }, {
         color: pieColor,
         description: 'dashboard.active_users',
-        stats: '178,391',
+        stats: '$ 178,391',
         icon: 'face',
       }, {
         color: pieColor,
         description: 'dashboard.returned',
-        stats: '32,592',
+        stats: '$ 32,592',
         icon: 'refresh',
       }
     ];

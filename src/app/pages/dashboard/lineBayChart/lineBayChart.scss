@@ -1,0 +1,149 @@
+@import "../../../theme/sass/conf/conf";
+
+:host /deep/ {
+
+  .ct-area {
+    fill-opacity: .5;
+  }
+
+  .ct-label {
+    color: $default-text;
+    opacity: 0.9;
+    fill: $default-text;
+  }
+
+  .ct-chart .ct-label {
+    font-size: 1em;
+  }
+
+  .ct-chart svg {
+    width: 100%;
+    display: block;
+  }
+
+  .ct-series-a {
+    .ct-bar, .ct-line, .ct-point, .ct-slice-donut, .ct-slice-pie {
+      stroke: $primary;
+    }
+    .ct-slice-pie, .ct-area {
+      fill: $primary;
+    }
+  }
+
+  .ct-series-b {
+    .ct-bar, .ct-line, .ct-point, .ct-slice-donut, .ct-slice-pie {
+      stroke: $success;
+    }
+    .ct-slice-pie, .ct-area {
+      fill: $success;
+    }
+  }
+
+  .ct-series-c {
+    .ct-bar, .ct-line, .ct-point, .ct-slice-donut, .ct-slice-pie {
+      stroke: $danger;
+    }
+    .ct-slice-pie, .ct-area {
+      fill: $danger;
+    }
+  }
+
+  .ct-series-d {
+    .ct-bar, .ct-line, .ct-point, .ct-slice-donut, .ct-slice-pie {
+      stroke: $warning;
+    }
+    .ct-slice-pie, .ct-area {
+      fill: $warning;
+    }
+
+  }
+
+  .ct-series-e {
+    .ct-bar, .ct-line, .ct-point, .ct-slice-donut, .ct-slice-pie {
+      stroke: $info;
+    }
+    .ct-slice-pie, .ct-area {
+      fill: $info;
+    }
+  }
+
+  .stacked-bar .ct-bar {
+    stroke-width: 30px;
+  }
+
+  .ct-chart {
+    .ct-legend {
+      position: relative;
+      z-index: 10;
+      list-style: none;
+      text-align: center;
+
+      li {
+        position: relative;
+        padding-left: 23px;
+        margin-right: 10px;
+        margin-bottom: 3px;
+        cursor: pointer;
+        display: inline-block;
+
+        &:before {
+          width: 12px;
+          height: 12px;
+          position: absolute;
+          left: 0;
+          content: '';
+          border: 3px solid transparent;
+          border-radius: 2px;
+        }
+        .inactive:before {
+          background: transparent;
+        }
+
+        &:nth-child(1)::before{
+          background-color: $primary;
+        }
+
+        &:nth-child(2)::before{
+          background-color: $success;
+        }
+
+        &:nth-child(3)::before{
+          background-color: $danger;
+        }
+
+        &:nth-child(1n+4)::before{
+          background-color: $warning;
+        }
+      }
+
+      .ct-legend-inside {
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+    }
+    g:not(.ct-grids):not(.ct-labels) g {
+      &:nth-child(1){
+        .ct-point,.ct-line {
+          stroke: #d70206;
+        }
+      }
+      &:nth-child(2){
+        .ct-point,.ct-line {
+          stroke: #f05b4f;
+        }
+      }
+      &:nth-child(3){
+        .ct-point,.ct-line {
+          stroke: #f4c63d;
+        }
+      }
+      &:nth-child(1n+4){
+        .ct-point,.ct-line {
+          stroke: #F06292;
+        }
+      }
+    }
+  }
+
+}
