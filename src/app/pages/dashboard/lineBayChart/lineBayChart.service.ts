@@ -19,12 +19,12 @@ export class LineBayChartService {
   constructor(private http: Http) {
   }
 
-  private baseUrl = 'http://localhost:9000/waterdata-fountain/v2/bay';
+  private baseUrl = 'http://localhost:8080/bay/v1';
 
   getBayLineData(): Observable<LineBayChart[]> {
     return this.http
       .get(`${this.baseUrl}/line`)
-      .map(response => response.json().map(toLineChart));
+      .map(response => response.json().chartList.map(toLineChart));
   }
 
   static getLineOptions() {

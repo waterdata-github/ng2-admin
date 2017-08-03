@@ -6,7 +6,7 @@ import { BaThemeConfigProvider } from '../../../theme';
 import { BayChart } from './bayChart';
 
 function mapBarChart(response: Response): BayChart[] {
-  return response.json().map(toBarChart);
+  return response.json().chartList.map(toBarChart);
 }
 
 
@@ -25,7 +25,7 @@ export class BayChartService {
   constructor(private _baConfig: BaThemeConfigProvider, private http: Http) {
   }
 
-  private baseUrl = 'http://localhost:9000/waterdata-fountain/v2/bay';
+  private baseUrl = 'http://localhost:8080/bay/v1';
 
   getBayBarData(): Observable<BayChart[]> {
     return this.http
