@@ -10,10 +10,10 @@ export class BaThemeConfig {
   }
 
   config() {
-     this._baConfig.changeTheme({ name: 'clear' });
+     this._baConfig.changeTheme({ name: 'sailsquare' });
 
     let colorScheme = {
-      primary: '#cc0099',
+      primary: '#FF0033',
       info: '#2dacd1',
       success: '#90b900',
       warning: '#dfb81c',
@@ -45,7 +45,7 @@ export class BaThemeConfig {
       dangerDark: colorHelper.shade(colorScheme.danger, 15),
 
       dashboard: {
-        blueStone: '#cc0099',
+        blueStone: '#3399cc',
         surfieGreen: '#cc99ff',
         silverTree: '#9999cc',
         gossip: '#9933cc',

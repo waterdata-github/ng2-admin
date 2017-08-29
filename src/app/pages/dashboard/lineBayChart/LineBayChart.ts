@@ -1,5 +1,6 @@
 export interface LineBayChart {
-  regionId: string;
   date: string;
-  price: number;
+  empty: number;
+  open: number;
+  confirmed: number;
 }

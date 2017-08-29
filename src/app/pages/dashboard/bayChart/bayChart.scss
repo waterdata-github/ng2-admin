@@ -23,28 +23,28 @@
 
   .ct-series-a {
     .ct-bar, .ct-line, .ct-point, .ct-slice-donut, .ct-slice-pie {
-      stroke: $primary;
+      stroke: #336db4;
     }
     .ct-slice-pie, .ct-area {
-      fill: $primary;
+      fill: #336db4;
     }
   }
 
   .ct-series-b {
     .ct-bar, .ct-line, .ct-point, .ct-slice-donut, .ct-slice-pie {
-      stroke: $success;
+      stroke: #70abd5;
     }
     .ct-slice-pie, .ct-area {
-      fill: $success;
+      fill: #70abd5;
     }
   }
 
   .ct-series-c {
     .ct-bar, .ct-line, .ct-point, .ct-slice-donut, .ct-slice-pie {
-      stroke: $danger;
+      stroke: #c6d9ef;
     }
     .ct-slice-pie, .ct-area {
-      fill: $danger;
+      fill: #c6d9ef;
     }
   }
 
@@ -100,17 +100,16 @@
         }
 
         &:nth-child(1)::before{
-          background-color: $primary;
+          background-color: #336db4;
         }
 
         &:nth-child(2)::before{
-          background-color: $success;
+          background-color: #70abd5;
         }
 
         &:nth-child(3)::before{
-          background-color: $danger;
+          background-color: #c6d9ef;
         }
-
         &:nth-child(1n+4)::before{
           background-color: $warning;
         }
@@ -125,22 +124,27 @@
     g:not(.ct-grids):not(.ct-labels) g {
       &:nth-child(1){
         .ct-point,.ct-line {
-          stroke: #d70206;
+          stroke: #336db4;
         }
       }
       &:nth-child(2){
         .ct-point,.ct-line {
-          stroke: #f05b4f;
+          stroke: #70abd5;
         }
       }
       &:nth-child(3){
         .ct-point,.ct-line {
-          stroke: #f4c63d;
+          stroke: #c6d9ef;
         }
       }
-      &:nth-child(1n+4){
+      &:nth-child(4){
         .ct-point,.ct-line {
-          stroke: #F06292;
+          stroke: #0066CC;
+        }
+      }
+      &:nth-child(1n+5){
+        .ct-point,.ct-line {
+          stroke: #0000CC;
         }
       }
     }

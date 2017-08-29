@@ -1,8 +1,8 @@
 import { Component, Input } from '@angular/core';
 
 import { BayChartService } from './bayChart.service';
+import * as Chartist from 'chartist';
 import * as ChartistLegend from 'chartist-plugin-legend';
-
 @Component({
   selector: 'bay-chart',
   templateUrl: './bayChart.html',
@@ -16,6 +16,7 @@ export class BayChart {
   bayStackedOptions: any;
 
   constructor(private _bayChartService: BayChartService) {
+    const legendPlugin = new ChartistLegend()
   }
 
   ngOnInit() {
@@ -24,9 +25,9 @@ export class BayChart {
         return this.bayStacked = {
           labels: d.map(l => l.regionId),
           series: [
-            { 'name': 'Open', 'data': d.map(o => o.open) },
-            { 'name': 'Empty', 'data': d.map(o => o.empty) },
-            { 'name': 'Confirmed', 'data': d.map(o => o.confirmed) }
+            { 'name': 'empty', 'data': d.map(o => o.empty) },
+            { 'name': 'open', 'data': d.map(o => o.open) },
+            { 'name': 'confirmed', 'data': d.map(o => o.confirmed) }
           ],
         };
       });
@@ -34,8 +35,19 @@ export class BayChart {
       this.bayStackedOptions = {
         fullWidth: true,
         height: '300px',
-        stackBars: false,
-        plugins: [new ChartistLegend()],
+        stackBars: true,
+        plugins: [Chartist.plugins.legend({
+          legendNames: ['empty', 'open', 'confirmed'],
+          clickable: false,
+        })],
+        axisX: {
+          showGrid: false
+        },
+        axisY: {
+          labelInterpolationFnc: function (value) {
+            return value * 100 + '%';
+          }
+        }
       };
   }
 }

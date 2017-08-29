@@ -1,20 +1,22 @@
-import { Injectable } from '@angular/core';
-import { Http, Response } from '@angular/http';
-import { Observable } from 'rxjs/Observable';
+import {Injectable} from '@angular/core';
+import {Http, Response} from '@angular/http';
+import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
-import { LineBayChart } from './LineBayChart';
-import * as ChartistLegend from 'chartist-plugin-legend';
+import {LineBayChart} from './LineBayChart';
+
 
 function toLineChart(r: any): LineBayChart {
   return <LineBayChart>({
-    regionId: r.regionId,
-    date: r.day,
-    price: Number.parseFloat(r.price),
+    date: r.x,
+    open: Number.parseFloat(r.open),
+    empty: Number.parseFloat(r.empty),
+    confirmed: Number.parseFloat(r.confirmed),
   });
 }
 
 @Injectable()
 export class LineBayChartService {
+
 
   constructor(private http: Http) {
   }
@@ -24,20 +26,7 @@ export class LineBayChartService {
   getBayLineData(): Observable<LineBayChart[]> {
     return this.http
       .get(`${this.baseUrl}/line`)
-      .map(response => response.json().chartList.map(toLineChart));
+      .map(response => response.json().chartList.map(toLineChart))
   }
 
-  static getLineOptions() {
-    return {
-        fullWidth: true,
-      showArea: true,
-      showPoint: false,
-      showLine: false,
-      height: '300px',
-      plugins: [new ChartistLegend()],
-      chartPadding: {
-      right: 40,
-    },
-    };
-  }
 }

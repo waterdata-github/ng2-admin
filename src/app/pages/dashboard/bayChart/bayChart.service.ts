@@ -12,7 +12,7 @@ function mapBarChart(response: Response): BayChart[] {
 
 function toBarChart(r: any): BayChart {
   return <BayChart>({
-    regionId: r.regionId,
+    regionId: r.x,
     open: Number.parseFloat(r.open),
     empty: Number.parseFloat(r.empty),
     confirmed: Number.parseFloat(r.confirmed),
@@ -29,7 +29,7 @@ export class BayChartService {
 
   getBayBarData(): Observable<BayChart[]> {
     return this.http
-      .get(`${this.baseUrl}/bar`)
+      .get(`${this.baseUrl}/histogram`)
       .map(mapBarChart);
   }
 }

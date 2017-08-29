@@ -27,6 +27,8 @@ import { BayChart } from './bayChart/bayChart.component';
 import { LineBayChartComponent } from './lineBayChart/lineBayChart.component';
 import { BayChartService } from './bayChart/bayChart.service';
 import { LineBayChartService } from './lineBayChart/lineBayChart.service';
+import {ScatterBayChartComponent} from "./scatterBayChart/scatterBayChart.component";
+import {ScatterBayChartService} from "./scatterBayChart/scatterBayChart.service";
 
 @NgModule({
   imports: [
@@ -48,7 +50,8 @@ import { LineBayChartService } from './lineBayChart/lineBayChart.service';
     Calendar,
     Dashboard,
     BayChart,
-    LineBayChartComponent
+    LineBayChartComponent,
+    ScatterBayChartComponent
   ],
   providers: [
     CalendarService,
@@ -59,7 +62,8 @@ import { LineBayChartService } from './lineBayChart/lineBayChart.service';
     TrafficChartService,
     UsersMapService,
     BayChartService,
-    LineBayChartService
+    LineBayChartService,
+    ScatterBayChartService
   ]
 })
 export class DashboardModule {}

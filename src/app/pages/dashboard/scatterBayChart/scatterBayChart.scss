@@ -3,7 +3,7 @@
 :host /deep/ {
 
   .ct-area {
-    fill-opacity: 1;
+    fill-opacity: .5;
   }
 
   .ct-label {
@@ -23,28 +23,28 @@
 
   .ct-series-a {
     .ct-bar, .ct-line, .ct-point, .ct-slice-donut, .ct-slice-pie {
-      stroke: #c6d9ef;
+      stroke: $primary;
     }
     .ct-slice-pie, .ct-area {
-      fill: #c6d9ef;
+      fill: $primary;
     }
   }
 
   .ct-series-b {
     .ct-bar, .ct-line, .ct-point, .ct-slice-donut, .ct-slice-pie {
-      stroke: #70abd5;
+      stroke: $success;
     }
     .ct-slice-pie, .ct-area {
-      fill: #70abd5;
+      fill: $success;
     }
   }
 
   .ct-series-c {
     .ct-bar, .ct-line, .ct-point, .ct-slice-donut, .ct-slice-pie {
-      stroke: #336db4;
+      stroke: $danger;
     }
     .ct-slice-pie, .ct-area {
-      fill: #336db4;
+      fill: $danger;
     }
   }
 
@@ -100,15 +100,15 @@
         }
 
         &:nth-child(1)::before{
-          background-color: #336db4;
+          background-color: $primary;
         }
 
         &:nth-child(2)::before{
-          background-color: #70abd5;
+          background-color: $success;
         }
 
         &:nth-child(3)::before{
-          background-color: #c6d9ef;
+          background-color: $danger;
         }
 
         &:nth-child(1n+4)::before{
@@ -125,27 +125,37 @@
     g:not(.ct-grids):not(.ct-labels) g {
       &:nth-child(1){
         .ct-point,.ct-line {
-          stroke: #336db4;
+          stroke: #deeaf7;
         }
       }
       &:nth-child(2){
         .ct-point,.ct-line {
-          stroke: #70abd5;
+          stroke: #c6d9ef;
         }
       }
       &:nth-child(3){
         .ct-point,.ct-line {
-          stroke: #c6d9ef;
+          stroke: #a0c7e0;
         }
       }
       &:nth-child(4){
         .ct-point,.ct-line {
-          stroke: #0066CC;
+          stroke: #70abd5;
         }
       }
-      &:nth-child(1n+5){
+      &:nth-child(5){
         .ct-point,.ct-line {
-          stroke: #0000CC;
+          stroke: #4c8ec4;
+        }
+      }
+      &:nth-child(6){
+        .ct-point,.ct-line {
+          stroke: #336db4;
+        }
+      }
+      &:nth-child(7){
+        .ct-point,.ct-line {
+          stroke: #204493;
         }
       }
     }

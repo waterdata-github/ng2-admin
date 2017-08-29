@@ -1,13 +1,14 @@
 <div class="page-top clearfix" baScrollPosition maxHeight="50" (scrollChange)="scrolledChanged($event)"
      [ngClass]="{scrolled: isScrolled}">
-  <a routerLink="/pages/dashboard" class="al-logo clearfix"><span>Liquid</span>Price</a>
-  <a href (click)="toggleMenu()" class="collapse-menu-link ion-navicon"></a>
+  <a routerLink="/pages/dashboard" class="al-logo clearfix">
+    <img src="assets/img/app/sailsquare_white.png" style="left: 100px; width: 40%">
+  </a>
 
 
   <div class="user-profile clearfix">
     <div class="dropdown al-user-profile">
       <a class="profile-toggle-link dropdown-toggle" id="user-profile-dd" data-toggle="dropdown" aria-expanded="false">
-        <img src="{{ ( 'Nasta' | baProfilePicture ) }}">
+        <img src="{{ ( 'stefanato' | baProfilePicture ) }}">
       </a>
       <ul class="dropdown-menu top-dropdown-menu profile-dropdown" aria-labelledby="user-profile-dd">
         <li class="dropdown-item"><a href><i class="fa fa-user"></i>Profile</a></li>
